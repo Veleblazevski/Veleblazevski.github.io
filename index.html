@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lightbox/ekko-lightbox.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="loader">
+        <img src="loader/loader.gif" alt="" class="sword-load">
+    </div>
+    <div id="mainContainer" class="topbar">
+        <div id="loginMenu">
+            <div class="settingIconsPlace">
+                <i class="far fa-user" id="user-icon"></i>
+                <i class="fas fa-question" id="myQuestion"></i>
+                <img class="logo-img" src="Pictures/logo.png"></div>
+        </div>
+        <div class="container-two" id="menu-second">
+            <div class="tutorial">
+                <ul class="menu" id="menuSelect">
+                    <li><img class="logo2-img" src="Pictures/logo.png"></li>
+                    <li id="home">Home</li>
+                    <li id="charPage">Characters
+                    </li>
+                    <li id="closehover">About<i class="fa fa-angle-down" id="arrow"></i>
+                        <ul class="sub-menu">
+                            <li id="gallery">Gallery</li>
+                            <li id="mediaContent">Media</li>
+                        </ul>
+                    </li>
+                    <li id="scrollMeSystem">Store
+                    </li>
+                    <li id="cart-box">Cart<i class="fa fa-shopping-cart" id="arrow-two"></i>
+
+                    </li>
+                    <div class="dropDownCart" id="dropDownCart">
+                        <div class="infoProduct">
+                            <span class="productName">Product:</span>
+                            <span class="productPrice">Price:</span>
+                            <span class="productName">Name:</span>
+                            <span class="closeCart">    <i class="far fa-window-close" id="closeCart"></i>
+                            </span>
+                        </div>
+                        <div class="emtpycartDiv" id="emptyDiv"></div>
+                        <button class="clearbtm" id="clearbtm"></button>
+                    </div>
+
+
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="container-content"></div>
+    <div id="Characters"></div>
+    <div id="buyItems"></div>
+    <div id="apicontent"></div>
+    <div id="galleryApi"></div>
+
+    <div id="footerBefore">
+        <p class="parental">
+
+            PARENTS:VIDEO GAME CONTROL IS IN YOUR HANDS.</p>
+        <div class="button_cont" align="center"><a class="example_e" href="http://www.esrb.org/about/settingcontrols.aspx" target="_blank" rel="nofollow noopener">Learn More</a></div>
+    </div>
+    <div id="footerTwo">
+        <footer class="page-footer font-small cyan darken-3">
+            <div class="containerSome">
+                <div class="row">
+                    <div class="col-md-12 py-5">
+                        <div class="mb-5 flex-center">
+                            <a class="fb-ic" target="_blank" href="https://www.facebook.com/gaming/devilmaycry5/?sub_view=videos&fbsource=1103&external_ref=game_search_unit">
+                                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <a class="tw-ic" target="_blank" href="https://twitter.com/DevilMayCry?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <a class="gplus-ic" target="_blank" href="https://plus.google.com/">
+                                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <a class="li-ic" target="_blank" href="https://www.linkedin.com/company/dmc-engineering">
+                                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <a class="ins-ic" target="_blank" href="https://www.instagram.com/devilmaycrygame/">
+                                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <a class="pin-ic" target="_blank" href="https://www.pinterest.com/yanlovesgame/devil-may-cry/?lp=true">
+                                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center py-3">© 2019 Copyright </div>
+        </footer>
+    </div>
+
+
+
+    <i class="far fa-times-circle" id="closeDiv"></i>
+    <i class="fas fa-user-circle" id="loginPopUp"></i>
+    <p id="logPara">Sign in</p>
+    <i class="fas fa-plus-circle" id="registerPopUp"></i>
+    <p id="regPara">Create Account</p>
+    <i class="fas fa-user-circle" id="logOutFromStorage"></i>
+    <i class="far fa-times-circle" id="closeDivHeader"></i>
+    <a href="https://devilmaycry.org/forums/" target="_blank" id="question-link"><i class="far fa-question-circle" id="question"></i></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
