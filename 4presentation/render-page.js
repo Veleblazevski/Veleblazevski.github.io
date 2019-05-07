@@ -60,13 +60,13 @@ export function RenderPage() {
         this.apiContent.renderApiData();
         this.imgContent.renderImgData();
         this.shopContent.renderMyShop();
-
-
         setTimeout(function() {
 
             $(".loader").addClass("loader-hide").fadeOut();
             $self.homeContent.renderHomeContent();
             $self.charContent.renderCharacters();
+            $self.homeContent.renderSimData();
+
             var loader = $(".loader");
             $("#home").on("click", (event) => {
                 event.preventDefault();
@@ -286,6 +286,5 @@ export function RenderPage() {
 
     }
 
-    console.log('done');
 
 }

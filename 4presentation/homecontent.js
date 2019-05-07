@@ -1,8 +1,13 @@
+import { PageLogic } from "../3buisness/bussnes-logic.js"
+
 export function HomeContent() {
+    this.pageLogic = new PageLogic();
+    this.pageData = null;
 
     var videos = ["Video/dmc.mp4", "Video/video2.mp4", "Video/video3.mp4", "Video/video4.mp4"];
     var videoId = 0;
     this.renderHomeContent = () => {
+
         $("#dropDownCart").hide();
 
         var video = $('<video />', {
@@ -173,6 +178,71 @@ export function HomeContent() {
                 $li.text("RAM:4GB");
             }
         }
+        var divTextAnim = $("<div>").addClass("text").appendTo($("#container-content"));
+        var span1 = $("<span>").text("S").appendTo(divTextAnim);
+        var span2 = $("<span>").text("I").appendTo(divTextAnim);
+        var span3 = $("<span>").text("M").appendTo(divTextAnim);
+        var span4 = $("<span>").text("U").appendTo(divTextAnim);
+        var span5 = $("<span>").text("L").appendTo(divTextAnim);
+        var span6 = $("<span>").text("A").appendTo(divTextAnim);
+        var span7 = $("<span>").text("R").appendTo(divTextAnim);
+        var span8 = $("<span>").text("").appendTo(divTextAnim);
+        var span9 = $("<span>").text("G").appendTo(divTextAnim);
+        var span10 = $("<span>").text("A").appendTo(divTextAnim);
+        var span11 = $("<span>").text("M").appendTo(divTextAnim);
+        var span12 = $("<span>").text("E").appendTo(divTextAnim);
+        var span13 = $("<span>").text("S").appendTo(divTextAnim);
+        var divDropDownSim = $("<div>").attr("id", "simularGames").appendTo($("#container-content"));
+        this.renderSimData = async function() {
+            this.pageData = await this.pageLogic.getDataFromSimGames();
+            console.log(this.pageData);
+            for (let index = 0; index < this.pageData.games.length; index++) {
+                if (this.pageData.games[index].aliases != null) {
+                    var simular = $("<div>").addClass("apiSimularImages").appendTo($("#contentSimular"));
+
+                    var $aHrefImg = $("<img>").attr("id", "hidden-images").attr("src", this.pageData.games[index].image.medium_url).addClass("sadadas").bind("mouseenter", function(e) {
+
+                        ($(e.target).next().show().css({
+                            display: 'grid',
+                            cursor: 'pointer',
+                        }));
+
+
+                    }).appendTo(simular);
+                    var $hoverDiv = $("<div>").attr("id", "hoverMeText").hide().appendTo(simular);
+
+                    var $nameGame = $("<span>").attr("id", "nameForGame").html("Name:" + "<br/>" + this.pageData.games[index].name).appendTo($hoverDiv);
+                    var $releaseData = $("<span>").attr("id", "DataGameRelease").html("Release Date:" + "<br/>" + this.pageData.games[index].original_release_date).appendTo($hoverDiv);
+                    var $platform = $("<span>").attr("id", "platform").html("Platform:" + "<br/>" + this.pageData.games[index].platforms[0].abbreviation).appendTo($hoverDiv);
+                    $hoverDiv.mouseleave(function(e) {
+
+                        $(e.target).parent().css({
+                            display: "none"
+                        })
+                    });
+
+                }
+
+            }
+        }
+
+        var spanClose = $("<i>").addClass("fas fa-times").attr("id", "closeHoverSim").css({
+            marginTop: '50px',
+            fontSize: '36px',
+            cursor: 'pointer'
+        }).appendTo(divDropDownSim);
+        var dropdownContentApi = $("<div>").attr("id", "contentSimular").appendTo(divDropDownSim);
+        divDropDownSim.hide();
+        divTextAnim.click(function(e) {
+            divDropDownSim.show(500);
+            divDropDownSim.css({
+                display: 'grid',
+            })
+        });
+        spanClose.click(function(e) {
+            divDropDownSim.hide(500);
+
+        });
         var $slider = ($("<div>")).addClass("splitview skewed").appendTo($("#container-content"));
         var $panel = ($("<div>")).addClass("panel bottom").appendTo($slider);
         var $contentSlide = ($("<div>")).addClass("content").appendTo($panel);

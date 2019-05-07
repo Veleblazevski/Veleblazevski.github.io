@@ -11,15 +11,14 @@ export function PageLogic() {
     this.getDataFromApiChar = async function() {
         var characerDecks = await this.charData.getCharText();
         var charVideos = await this.charData.GetCharVideos();
-        var charSongs = await this.songsRepo.getGamePic();
+
 
         var pageData = {
             text: characerDecks,
             video: charVideos,
-            pictures: charSongs,
+
 
         };
-        // console.log(pageData)
 
         return pageData;
     }
@@ -30,11 +29,17 @@ export function PageLogic() {
 
             pictures: charSongs
         };
-        // console.log(pageData)
 
         return pageData;
     }
-
+    this.getDataFromSimGames = async function() {
+        var simGames = await this.songsRepo.getSimGames();
+        var pageData = {
+            games: simGames
+        }
+        console.log(pageData);
+        return pageData;
+    }
 
     this.postUserData = function(email, password) {
         var user = new User(email, password);

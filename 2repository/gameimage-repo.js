@@ -14,7 +14,21 @@ export function PicturesRepo() {
             return null;
         }
     }
+    this.getSimGames = async function getSomeData() {
+        try {
+            var response = await fetch("http://api.giantbomb.com/search/?api_key=9f62907a5f7583c36821dc6b7440c790827d04a6&format=json&query=fantasy&resources=game");
 
+            var data = await response.json();
+            console.log(data);
+
+            return data.results.map((results) => {
+                return results;
+            });
+        } catch (error) {
+            // console.log("error out" + error);
+            return null;
+        }
+    }
 
 
 }
